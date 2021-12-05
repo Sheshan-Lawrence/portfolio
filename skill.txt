@@ -1,0 +1,2 @@
+ Downloading pandas-1.3.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.5 MB)
+     |████████████████████████████████| 11.5 MB 264 kB/s
