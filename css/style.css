@@ -180,6 +180,22 @@ body {
   border: 6px solid var(--main2);
 }
 
+/* button */
+.btn-color{
+  background-color: var(--text1);
+  color: var(--main2);
+  border:1px solid  var(--main2);
+}
+.btn-color:hover{
+  background-color: var(--main2);
+  color: var(--text1);
+  border:1px solid  var(--text1);
+}
+.btn-color:focus{
+  background-color: var(--main2);
+  color: var(--text1);
+  border:1px solid  var(--text1);
+}
 /* image */
 
 .img {

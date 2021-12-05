@@ -162,11 +162,25 @@ var pagesDetails = {
   </div>
 
 </div>`,
-  contact: "",
+  contact: ` <form name="contactForm" onsubmit="onContactSubmission(event)">
+  <div class="mb-3">
+      <label for="InputEmail" class="form-label">Email</label>
+      <input type="email" class="form-control rounded-0" id="InputEmail" name="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+      <label for="InputSubject" class="form-label">Subject</label>
+      <input type="text" class="form-control rounded-0" id="InputSubject" name="subject">
+  </div>
+  <div class="mb-3">
+      <label for="InputBody" class="form-label">Body</label>
+      <textarea class="form-control rounded-0" rows="6" id="InputBody" name="body"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary shadow-none rounded-0 float-end btn-color">Submit</button>
+</form>`,
 };
 
 var changeSection = document.getElementById("changePageId");
-
 
 function onSectionClick(evt, sectionname) {
   changeSection.innerHTML = pagesDetails[sectionname];
@@ -202,11 +216,11 @@ function closeFullImage() {
 }
 
 let skillLevel = {
-  skill1: 20,
-  skill2: 25,
-  skill3: 35,
-  skill4: 38,
-  skill5: 28,
+  skill1: 8,
+  skill2: 11,
+  skill3: 10,
+  skill4: 20,
+  skill5: 20,
 };
 
 function skillAnimate(skillId) {
@@ -222,62 +236,68 @@ function skillAnimate(skillId) {
 }
 
 // Change Mode
-function changeMode(evt,mode) {
+function changeMode(evt, mode) {
   var r = document.querySelector(":root");
-    console.log(mode);
-    if (evt != undefined) {
-        var navList = document.getElementById("themebar").children;
-        for (let idx = 0; idx < navList.length; idx++) {
-          navList[idx].classList.remove("is-active");
-        }
-        evt.target.classList.add("is-active");
-      }
+  console.log(mode);
+  if (evt != undefined) {
+    var navList = document.getElementById("themebar").children;
+    for (let idx = 0; idx < navList.length; idx++) {
+      navList[idx].classList.remove("is-active");
+    }
+    evt.target.classList.add("is-active");
+  }
 
   switch (mode) {
     case "dark":
-        r.style.setProperty("--main1", "#646464");
-        r.style.setProperty("--main2", "#292929");
-        r.style.setProperty("--main3", "#555");
-        r.style.setProperty("--text1", "#fff");
-    break;
+      r.style.setProperty("--main1", "#646464");
+      r.style.setProperty("--main2", "#292929");
+      r.style.setProperty("--main3", "#555");
+      r.style.setProperty("--text1", "#fff");
+      break;
     case "light":
-        r.style.setProperty("--main1", "#ffffff");
-        r.style.setProperty("--main2", "#ffffff");
-        r.style.setProperty("--main3", "#646464");
-        r.style.setProperty("--text1", "#646464");
-    break;
+      r.style.setProperty("--main1", "#ffffff");
+      r.style.setProperty("--main2", "#ffffff");
+      r.style.setProperty("--main3", "#646464");
+      r.style.setProperty("--text1", "#646464");
+      break;
     case "blue":
-        r.style.setProperty("--main1", "#50A");
-        r.style.setProperty("--main2", "#001E6C");
-        r.style.setProperty("--main3", "#646464");
-        r.style.setProperty("--text1", "#FFAA4C");
-    break;  
+      r.style.setProperty("--main1", "#50A");
+      r.style.setProperty("--main2", "#001E6C");
+      r.style.setProperty("--main3", "#646464");
+      r.style.setProperty("--text1", "#FFAA4C");
+      break;
     case "red":
-        r.style.setProperty("--main1", "#161E54");
-        r.style.setProperty("--main2", "#161E54");
-        r.style.setProperty("--main3", "#FF9B6A");
-        r.style.setProperty("--text1", "#FF5151");
-    break;      
+      r.style.setProperty("--main1", "#161E54");
+      r.style.setProperty("--main2", "#161E54");
+      r.style.setProperty("--main3", "#FF9B6A");
+      r.style.setProperty("--text1", "#FF5151");
+      break;
     default:
-        r.style.setProperty("--main1", "#161E54");
-        r.style.setProperty("--main2", "#161E54");
-        r.style.setProperty("--main3", "#FF9B6A");
-        r.style.setProperty("--text1", "#FF5151");
-    break;
+      r.style.setProperty("--main1", "#161E54");
+      r.style.setProperty("--main2", "#161E54");
+      r.style.setProperty("--main3", "#FF9B6A");
+      r.style.setProperty("--text1", "#FF5151");
+      break;
   }
 }
 
+function onContactSubmission() {
+  event.preventDefault();
+  const formData = new FormData(document.forms["contactForm"]);
+  var body = "";
+  var subject = "";
+  for (var pair of formData.entries()) {
+    if (pair[0] == "subject") subject = pair[1];
+    else body += pair[1] +  '%0D%0A';
+  }
+console.log();
+  console.log(body);
+  console.log(subject);
+  window.open(`mailto:official.sheshan@gmail.com?subject=${subject}&body=${body}`);
 
-window.onload= ()=>{
-    changeMode(undefined,"dark");
-    // onSectionClick(undefined, "education");
 }
-//  --main1: #646464;
-//   --main2:#292929;
-//   --main3:#555;
-//   --text1: #fff;
-//   --red1: #f01717;
-// #005
-// #50A
-// r.style.setProperty('--main1', '#50A');
-// r.style.setProperty('--main2','#005' );
+
+window.onload = () => {
+  changeMode(undefined, "dark");
+  onSectionClick(undefined, "education");
+};
