@@ -167,7 +167,7 @@ var pagesDetails = {
 
 var changeSection = document.getElementById("changePageId");
 
-onSectionClick(undefined, "skill");
+onSectionClick(undefined, "education");
 
 function onSectionClick(evt, sectionname) {
   changeSection.innerHTML = pagesDetails[sectionname];
