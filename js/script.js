@@ -238,7 +238,6 @@ function skillAnimate(skillId) {
 // Change Mode
 function changeMode(evt, mode) {
   var r = document.querySelector(":root");
-  console.log(mode);
   if (evt != undefined) {
     var navList = document.getElementById("themebar").children;
     for (let idx = 0; idx < navList.length; idx++) {
@@ -290,9 +289,6 @@ function onContactSubmission() {
     if (pair[0] == "subject") subject = pair[1];
     else body += pair[1] +  '%0D%0A';
   }
-console.log();
-  console.log(body);
-  console.log(subject);
   window.open(`mailto:official.sheshan@gmail.com?subject=${subject}&body=${body}`);
 
 }
