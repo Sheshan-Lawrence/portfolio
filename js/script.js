@@ -270,8 +270,7 @@ function changeMode(evt,mode) {
 
 window.onload= ()=>{
     changeMode(undefined,"dark");
-    onSectionClick(undefined, "education");
-
+    // onSectionClick(undefined, "education");
 }
 //  --main1: #646464;
 //   --main2:#292929;

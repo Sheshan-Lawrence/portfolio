@@ -21,8 +21,8 @@
             <div  class="text-end"  id="themebar">
                 <a class="hyperlink is-active" onclick="changeMode(event,'dark')">🌙Dark</a>
                 <a class="hyperlink" onclick="changeMode(event,'light')">🔆Light</a>
-                <a class="hyperlink" onclick="changeMode(event,'blue')">💙Blue</a>
-                <a class="hyperlink" onclick="changeMode(event,'red')">❤️Red</a>
+                <a class="hyperlink" onclick="changeMode(event,'blue')">🔵Blue</a>
+                <a class="hyperlink" onclick="changeMode(event,'red')">🔴Red</a>
 
             </div>
             <div class="col-sm-12 text-start">
@@ -51,7 +51,25 @@
             </div>
         </div>
         <div class="container mt-3" id="changePageId">
-
+            <form>
+                <div class="mb-3">
+                  <label for="InputEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control rounded-0" id="InputEmail" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="InputEmail" class="form-label">Subject</label>
+                    <input type="email" class="form-control rounded-0" id="InputEmail" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                  <label for="InputBody" class="form-label">Body</label>
+                  <textarea type="password" class="form-control rounded-0" id="InputBody"></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
         </div>
     </section>
     <div class="full-image-div p-2" id="full-image-div">
