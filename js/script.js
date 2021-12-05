@@ -167,7 +167,6 @@ var pagesDetails = {
 
 var changeSection = document.getElementById("changePageId");
 
-onSectionClick(undefined, "education");
 
 function onSectionClick(evt, sectionname) {
   changeSection.innerHTML = pagesDetails[sectionname];
@@ -221,3 +220,65 @@ function skillAnimate(skillId) {
     }
   }, 100);
 }
+
+// Change Mode
+function changeMode(evt,mode) {
+  var r = document.querySelector(":root");
+    console.log(mode);
+    if (evt != undefined) {
+        var navList = document.getElementById("themebar").children;
+        for (let idx = 0; idx < navList.length; idx++) {
+          navList[idx].classList.remove("is-active");
+        }
+        evt.target.classList.add("is-active");
+      }
+
+  switch (mode) {
+    case "dark":
+        r.style.setProperty("--main1", "#646464");
+        r.style.setProperty("--main2", "#292929");
+        r.style.setProperty("--main3", "#555");
+        r.style.setProperty("--text1", "#fff");
+    break;
+    case "light":
+        r.style.setProperty("--main1", "#ffffff");
+        r.style.setProperty("--main2", "#ffffff");
+        r.style.setProperty("--main3", "#646464");
+        r.style.setProperty("--text1", "#646464");
+    break;
+    case "blue":
+        r.style.setProperty("--main1", "#50A");
+        r.style.setProperty("--main2", "#001E6C");
+        r.style.setProperty("--main3", "#646464");
+        r.style.setProperty("--text1", "#FFAA4C");
+    break;  
+    case "red":
+        r.style.setProperty("--main1", "#161E54");
+        r.style.setProperty("--main2", "#161E54");
+        r.style.setProperty("--main3", "#FF9B6A");
+        r.style.setProperty("--text1", "#FF5151");
+    break;      
+    default:
+        r.style.setProperty("--main1", "#161E54");
+        r.style.setProperty("--main2", "#161E54");
+        r.style.setProperty("--main3", "#FF9B6A");
+        r.style.setProperty("--text1", "#FF5151");
+    break;
+  }
+}
+
+
+window.onload= ()=>{
+    changeMode(undefined,"dark");
+    onSectionClick(undefined, "education");
+
+}
+//  --main1: #646464;
+//   --main2:#292929;
+//   --main3:#555;
+//   --text1: #fff;
+//   --red1: #f01717;
+// #005
+// #50A
+// r.style.setProperty('--main1', '#50A');
+// r.style.setProperty('--main2','#005' );
