@@ -166,11 +166,22 @@ var pagesDetails = {
 };
 
 var changeSection = document.getElementById("changePageId");
-changeSection.innerHTML = pagesDetails['education'];
 
-function onSectionClick(sectionname) {
+onSectionClick(undefined, "skill");
+
+function onSectionClick(evt, sectionname) {
   changeSection.innerHTML = pagesDetails[sectionname];
-  if(sectionname=="skill"){
+  if (evt != undefined) {
+    var navList = document.getElementById("navbar").children;
+
+    for (let idx = 0; idx < navList.length; idx++) {
+      navList[idx].classList.remove("is-active");
+    }
+
+    evt.target.classList.add("is-active");
+  }
+
+  if (sectionname == "skill") {
     skillAnimate("skill1");
     skillAnimate("skill2");
     skillAnimate("skill3");
@@ -206,10 +217,7 @@ function skillAnimate(skillId) {
       clearInterval(skillInterval);
     }
     if (skillLevel[skillId] >= skill.innerHTML.length) {
-      skill.innerHTML  += "█";
-    } 
-
+      skill.innerHTML += "█";
+    }
   }, 100);
 }
-
-

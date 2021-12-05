@@ -83,6 +83,10 @@ body {
   background-color: white;
 }
 
+.hyperlink.is-active {
+  color: #646464;
+  background-color: white;
+}
 /* Highlight */
 .highlight {
   padding: 3px;

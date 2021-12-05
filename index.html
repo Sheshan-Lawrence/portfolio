@@ -30,17 +30,17 @@
 
     <section id="main" class="main-section ">
         <div class="container border-1">
-            <div class="text-center">
-                <a class="hyperlink" onclick="onSectionClick('education')">Education</a>
-                <a class="hyperlink" onclick="onSectionClick('projects')">Projects</a>
-                <a class="hyperlink" onclick="onSectionClick('portfolio')">Portfolio</a>
-                <a class="hyperlink" onclick="onSectionClick('skill')">Skill</a>
-                <a class="hyperlink" onclick="onSectionClick('contact')">Contact</a>
+            <div class="text-center" id="navbar">
+                <a class="hyperlink  is-active" onclick="onSectionClick(event,'education')">Education</a>
+                <a class="hyperlink" onclick="onSectionClick(event,'projects')">Projects</a>
+                <a class="hyperlink" onclick="onSectionClick(event,'portfolio')">Portfolio</a>
+                <a class="hyperlink" onclick="onSectionClick(event,'skill')">Skill</a>
+                <a class="hyperlink" onclick="onSectionClick(event,'contact')">Contact</a>
 
             </div>
         </div>
         <div class="container mt-3" id="changePageId">
-          
+
         </div>
     </section>
     <div class="full-image-div p-2" id="full-image-div">
