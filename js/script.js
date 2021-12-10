@@ -165,18 +165,18 @@ var pagesDetails = {
   contact: ` <form name="contactForm" onsubmit="onContactSubmission(event)">
   <div class="mb-3">
       <label for="InputEmail" class="form-label">Email</label>
-      <input type="email" class="form-control rounded-0" id="InputEmail" name="email" aria-describedby="emailHelp">
+      <input type="email" class="form-control input" id="InputEmail" name="email" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
       <label for="InputSubject" class="form-label">Subject</label>
-      <input type="text" class="form-control rounded-0" id="InputSubject" name="subject">
+      <input type="text" class="form-control input" id="InputSubject" name="subject">
   </div>
   <div class="mb-3">
       <label for="InputBody" class="form-label">Body</label>
-      <textarea class="form-control rounded-0" rows="6" id="InputBody" name="body"></textarea>
+      <textarea class="form-control input" rows="6" id="InputBody" name="body"></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary shadow-none rounded-0 float-end btn-color">Submit</button>
+  <button type="submit" class="btn btn-primary shadow-none  float-end btn-color">Submit</button>
 </form>`,
 };
 
@@ -292,15 +292,12 @@ function changeMode(evt, mode) {
 
 function onContactSubmission() {
   event.preventDefault();
-  const formData = new FormData(document.forms["contactForm"]);
-  var body = "";
-  var subject = "";
-  for (var pair of formData.entries()) {
-    if (pair[0] == "subject") subject = pair[1];
-    else body += pair[1] + '%0D%0A';
-  }
+  var email = document.getElementById('InputEmail').value;
+  var subject = document.getElementById('InputSubject').value;
+  var body =`Email : ${email}
+  %0D%0A----------------------------------------------------------------------%0D%0A
+  Body: ${document.getElementById('InputBody').value.replace(/\n/g, "%0D%0A")}`;
   window.open(`mailto:official.sheshan@gmail.com?subject=${subject}&body=${body}`);
-
 }
 
 window.onload = () => {

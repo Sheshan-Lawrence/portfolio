@@ -115,6 +115,7 @@ body {
   padding: 3px;
   color: var(--main1);
   background-color: var(--text1);
+  border-radius: 3px;
 }
 
 .hover-highlight{
@@ -306,4 +307,11 @@ body {
   0% { opacity: 0 }
   10% { opacity: 1;}
   100% { opacity: 0; }
+}
+
+/* input */
+.input{
+  border-radius: 2px!important;
+  background-color: var(--text1)!important;
+  color: var(--main2);
 }
