@@ -1,26 +1,26 @@
 var pagesDetails = {
-  education: `<div style="overflow-x:auto"><table>
+  education: `<div style="overflow-x:auto"><table > 
     <tbody>
-        <tr class="border-white-1">
+        <tr class="border-white-1 text-grey">
             <td class="ps-2">M.C.A Computer Application</td>
             <td class="ps-2">SRM Institute of Science and Technology</td>
             <td class="ps-2">2022 Apr</td>
             <td class="ps-2">CGPA more than 9.0 </td>
         </tr>
-        <tr class="border-white-1">
+        <tr class="border-white-1 text-grey">
             <td class="ps-2">B.C.A Computer Application</td>
             <td class="ps-2">SRM Institute of Science and Technology</td>
             <td class="ps-2">2019 April</td>
             <td class="ps-2">CGPA 7.59</td>
         </tr>
-        <tr class="border-white-1">
+        <tr class="border-white-1 text-grey">
             <td class="ps-2">Higher Secondary School Certificate</td>
             <td class="ps-2">ADITYA'S VIVEKANANDA MATRICULATION</td>
 
             <td class="ps-2">2019 March</td>
             <td class="ps-2">77.16%</td>
         </tr>
-        <tr class="border-white-1">
+        <tr class="border-white-1 text-grey">
             <td class="ps-2">Higher Secondary School Certificate</td>
             <td class="ps-2">THE NEW JOHN DEWEY MATRICULATION</td>
             <td class="ps-2">2014 March</td>
@@ -180,10 +180,23 @@ var pagesDetails = {
 </form>`,
 };
 
-var changeSection = document.getElementById("changePageId");
+var changeSection = $("#changePageId");
+
 
 function onSectionClick(evt, sectionname) {
-  changeSection.innerHTML = pagesDetails[sectionname];
+  changeSection.fadeOut(function () {
+    changeSection.html(pagesDetails[sectionname]);
+    changeSection.fadeIn();
+    if (sectionname == "skill") {
+      skillAnimate("skill1");
+      skillAnimate("skill2");
+      skillAnimate("skill3");
+      skillAnimate("skill4");
+      skillAnimate("skill5");
+    }
+  });
+
+
   if (evt != undefined) {
     var navList = document.getElementById("navbar").children;
 
@@ -194,25 +207,22 @@ function onSectionClick(evt, sectionname) {
     evt.target.classList.add("is-active");
   }
 
-  if (sectionname == "skill") {
-    skillAnimate("skill1");
-    skillAnimate("skill2");
-    skillAnimate("skill3");
-    skillAnimate("skill4");
-    skillAnimate("skill5");
-  }
+
 }
 
 // image Expand Functionality
+
+var expandImg = $("#full-image-div");
+expandImg.fadeOut();
+
 function expandImage(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  expandImg.src = imgs.src;
-  expandImg.parentElement.style.display = "block";
+  let image_element = document.getElementById('expandedImg');
+  image_element.src = imgs.src;
+  expandImg.fadeIn();
 }
 
 function closeFullImage() {
-  var expandImg = document.getElementById("full-image-div");
-  expandImg.style.display = "none";
+  expandImg.fadeOut()
 }
 
 let skillLevel = {
@@ -287,7 +297,7 @@ function onContactSubmission() {
   var subject = "";
   for (var pair of formData.entries()) {
     if (pair[0] == "subject") subject = pair[1];
-    else body += pair[1] +  '%0D%0A';
+    else body += pair[1] + '%0D%0A';
   }
   window.open(`mailto:official.sheshan@gmail.com?subject=${subject}&body=${body}`);
 

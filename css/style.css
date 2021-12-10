@@ -5,6 +5,7 @@
   --main3:#646464;
   --text1: #FFAA4C;
   --red1: #f01717;
+  --black: #000000;
 }
 /* 
 :root {
@@ -92,32 +93,40 @@ body {
 .hyperlink {
   color: var(--text1);
   text-decoration: none;
-  padding: 2px;
+  padding: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
+
 .hyperlink:hover {
   color: var(--main1);
   background-color: var(--text1);
+
 }
 
 .hyperlink.is-active {
   color: var(--main1);
   background-color: var(--text1);
+  
 }
+
 /* Highlight */
 .highlight {
   padding: 3px;
   color: var(--main1);
   background-color: var(--text1);
 }
+
 .hover-highlight{
   color: var(--text1);
   padding: 2px;
 }
+
 .hover-highlight:hover {
   color: var(--main1);
   background-color: var(--text1);
 }
+
 /* colors */
 .bg-white {
   background-color: var(--text1);
@@ -136,9 +145,18 @@ body {
 }
 
 .border-white-1 {
-  border: 1px solid var(--text1);
+  /* border-top: 1px solid var(--text1);
+  border-bottom: 1px solid var(--text1); */
+  border: 2px solid var(--main2);
+  background-color: var(--text1);
 }
 
+.border-white-1:hover {
+  background-color: var(--main2);
+  color: var(--text1);
+  border: 2px solid var(--main2);
+
+}
 .border-grey-1 {
   border: 1px solid var(--main2);
 }
@@ -205,7 +223,7 @@ body {
 }
 
 .full-image-div{
-  display: none;
+  /* display: none; */
   position: fixed;
   top: 0%;
   width: 100%;
@@ -243,3 +261,49 @@ body {
 }
 
 
+/* Typing animation */
+
+.typewriter {
+  min-width: 500px;
+  display: flex;
+  align-items: baseline;
+}
+
+
+.typewriter p {
+  color:var(--text1);
+  width: 0;
+  max-width: max-content;
+  overflow: hidden; 
+  border-right: .05em solid var(--text1);
+  white-space: nowrap;
+
+}
+
+.typing-erase {
+  animation: 
+    6s typing-erase 4s steps(50, end) infinite,
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing-erase {
+  0% { width: 0 }
+  80% { width: 100% }
+  90%, 100% { width: 0 }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--text1); }
+}
+
+.loading-text{
+  animation:
+  hide 1s forwards;
+}
+
+@keyframes hide {
+  0% { opacity: 0 }
+  10% { opacity: 1;}
+  100% { opacity: 0; }
+}
