@@ -97,13 +97,7 @@ var pagesDetails = {
   <div class="highlight">Internship Task</div>
   <ul>
       <li>
-          Design UI
-      </li>
-      <li>
-          Linked List Functionality
-      </li>
-      <li>
-          Days between two Dates
+    Web Application prototype to demonstrate UI Design and Linked List functionality
       </li>
   </ul>
   <div class="row text-center">
@@ -288,7 +282,7 @@ function onContactSubmission() {
   event.preventDefault();
   var email = document.getElementById('InputEmail').value;
   var subject = document.getElementById('InputSubject').value;
-  var body =`Email : ${email}
+  var body = `Email : ${email}
   %0D%0A----------------------------------------------------------------------%0D%0A
   Body: ${document.getElementById('InputBody').value.replace(/\n/g, "%0D%0A")}`;
   window.open(`mailto:official.sheshan@gmail.com?subject=${subject}&body=${body}`);
