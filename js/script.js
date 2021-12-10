@@ -4,14 +4,14 @@ var pagesDetails = {
         <tr class="border-white-1 text-grey">
             <td class="ps-2">M.C.A Computer Application</td>
             <td class="ps-2">SRM Institute of Science and Technology</td>
-            <td class="ps-2">2022 Apr</td>
-            <td class="ps-2">CGPA more than 9.0 </td>
+            <td class="ps-2">2022 April</td>
+            <td class="ps-2">90.0%</td>
         </tr>
         <tr class="border-white-1 text-grey">
             <td class="ps-2">B.C.A Computer Application</td>
             <td class="ps-2">SRM Institute of Science and Technology</td>
             <td class="ps-2">2019 April</td>
-            <td class="ps-2">CGPA 7.59</td>
+            <td class="ps-2">75.9%</td>
         </tr>
         <tr class="border-white-1 text-grey">
             <td class="ps-2">Higher Secondary School Certificate</td>
@@ -32,17 +32,15 @@ var pagesDetails = {
     <div>
         <div class="highlight">Classic Chatbot for Medical</div>
         <ul>
-            <li>It compares the data provided by the user and with the medical database and a report.</li>
-            <li>It uses PHP as server side scripting language, html5 as frontend and ajax as a HTTP client
-            </li>
+            <li>The objective of Classic chatbot is to diagnose user's illness based on the symptom provided as a input.</li>
+          
         </ul>
     </div>
     <div >
-       <div class="highlight">Real time Monitoring, Contamination and Detection in drinking water using IOT</div> 
+       <div class="highlight">Water Quality Detectors using IOT</div> 
         <ul>
-            <li>Adrino as a core component and python as a main programming language</li>
-            <li>Using Total Dissolved Solids Sensor to measures the conductivity of the solution and detect
-                the water quality</li>
+            <li>Real time Contamination Detector in drinking water using Arduino as a IOT Component.</li>
+            
         </ul>
     </div>
 </div>`,
@@ -50,12 +48,11 @@ var pagesDetails = {
   <div class="highlight mb-2"> Polygonal Chart</div>
   <ul>
       <li>
-          Build using <span class="highlight">Python</span> and its libs [<span
-              class="highlight">Pillow</span> for Image Draw and <span class="highlight">numpy</span> for
-          calculation of point on the circumference of a circle]
+      Polygonal chart is a creative dispaly of Random colors in polygonal shape based on given JSON input.
       </li>
-      <li>Takes input in JSON <span class="highlight">"{ "1" : "1","2" : "2","3" : "4","4" : "2","5" : "4"
-              }"</span> </li>
+      <p> <br>JSON
+      <span class="highlight">"{ "1" : "1","2" : "2","3" : "4","4" : "2","5" : "4"
+              }"</span> </p>
   </ul>
   <div class="row">
       <div class="col-6">
@@ -70,12 +67,11 @@ var pagesDetails = {
 
 </div>
 <div>
-  <div class="highlight mb-2">Student Management</div>
+  <div class="highlight mb-2">Student Management System</div>
   <ul>
-      <li>Build using <span class="highlight">NestJs</span>, a NodeJs Framework as backend and <span
-              class="highlight">Angular [Typescript]</span> as frontend</li>
-      <li>
-          It groups Student into various category and manages them more effectively.
+  <li>
+  Student Management System(SMS)  is a web application that provides a interactive base for students to work with their teachers to shape their career.
+  
       </li>
       <li>
           A Mini Post and Comment Section to communicate between students and teacher
@@ -206,8 +202,6 @@ function onSectionClick(evt, sectionname) {
 
     evt.target.classList.add("is-active");
   }
-
-
 }
 
 // image Expand Functionality
