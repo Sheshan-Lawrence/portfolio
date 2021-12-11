@@ -37,7 +37,7 @@ var pagesDetails = {
         </ul>
     </div>
     <div >
-       <div class="highlight">Water Quality Detectors using IOT</div> 
+       <div class="highlight">Water Quality Detectors using IOT.</div> 
         <ul>
             <li>Real time Contamination Detector in drinking water using Arduino as a IOT Component.</li>
             
@@ -74,7 +74,7 @@ var pagesDetails = {
   
       </li>
       <li>
-          A Mini Post and Comment Section to communicate between students and teacher
+          A Mini Post and Comment Section to communicate between students and teacher.
       </li>
   </ul>
   <div class="row">
@@ -97,7 +97,7 @@ var pagesDetails = {
   <div class="highlight">Internship Task</div>
   <ul>
       <li>
-    Web Application prototype to demonstrate UI Design and Linked List functionality
+    Web Application prototype to demonstrate UI Design and Linked List functionality.
       </li>
   </ul>
   <div class="row text-center">
@@ -111,7 +111,7 @@ var pagesDetails = {
   <div class="highlight">voting Management</div>
   <ul>
       <li>
-          Rest API, <span class="highlight">ExpressJS</span>, NodeJS Framework
+          Rest API, <span class="highlight">ExpressJS</span>, NodeJS Framework.
       </li>
       <li>
           Record Votes to the given participant.

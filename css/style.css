@@ -15,7 +15,9 @@
   --text1: #fff;
   --red1: #f01717;
 } */
-
+li{
+  list-style: symbols('>');
+}
 h1 {
   font-family: "Lucida Console", "Lucida Sans Typewriter", monaco,
     "Bitstream Vera Sans Mono", monospace;
